@@ -1,0 +1,235 @@
+/* General Styles */
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #f9f9f9;
+    color: #333;
+  }
+  
+  h1, h2, h3 {
+    font-weight: 700;
+  }
+  
+  p {
+    font-weight: 400;
+  }
+  
+  /* Header Styles */
+  header {
+    background: #333;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+  }
+  
+  header nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    display: inline;
+    margin: 0 1em;
+  }
+  
+  header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  
+  header nav ul li a:hover {
+    color: #ff5733;
+  }
+  
+  /* Animate the h1 tag */
+  header h1 {
+    display: inline-block;
+    animation: moveHorizontally 5s linear infinite;
+  }
+  
+  @keyframes moveHorizontally {
+    0% {
+      transform: translateX(0);
+    }
+    50% {
+      transform: translateX(20px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  /* Hero Section Styles */
+  #hero {
+    background: linear-gradient(to right, #ff5733, #ff8d1a);
+    color: white;
+    text-align: center;
+    padding: 4em 0;
+    margin-bottom: 2em;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .profile-photo {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    border: 5px solid white;
+  }
+  
+  #hero::before, #hero::after {
+    content: '';
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    animation: move 5s infinite alternate;
+  }
+  
+  #hero::before {
+    top: -50px;
+    left: -50px;
+  }
+  
+  #hero::after {
+    bottom: -50px;
+    right: -50px;
+  }
+  
+  /* Section Styles */
+  section {
+    padding: 2em;
+    margin: 1em auto;
+    max-width: 1000px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  }
+  
+  #projects .projects-container {
+    display: flex;
+    gap: 2em;
+    flex-wrap: wrap;
+    justify-content: space-between; /* Ensure even spacing between projects */
+  }
+  
+  .project-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    width: calc(33.333% - 2em);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
+  }
+  
+  .project-logo {
+    width: 80%;
+    height: auto;
+    margin-bottom: 1em;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+  
+  .project-links {
+    display: flex;
+    gap: 1em;
+    justify-content: center;
+    margin-top: auto;
+  }
+  
+  .project-links a {
+    display: inline-block;
+    padding: 0.5em 1em;
+    background: #ff5733;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+  }
+  
+  .project-links a:hover {
+    background: #e04b2b;
+  }
+  
+  /* Footer Styles */
+  footer {
+    text-align: center;
+    padding: 2em 0;
+    background: #333;
+    color: white;
+  }
+  
+  footer a {
+    color: #ff5733;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: #ff8d1a;
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+  
+  @keyframes move {
+    0% { transform: translateX(0) translateY(0); }
+    100% { transform: translateX(20px) translateY(-20px); }
+  }
+  
+  #hero {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .project-card {
+    animation: slideIn 1s ease-in-out;
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 768px) {
+    header {
+      padding: 0.5em 0; /* Reduced header padding */
+    }
+  
+    header h1 {
+      font-size: 1.8rem; /* Adjusted font size for smaller screens */
+    }
+  
+    #hero {
+      padding: 2em 0; /* Adjusted padding for smaller screens */
+    }
+  
+    .profile-photo {
+      width: 120px; /* Reduced profile photo size */
+      height: 120px;
+    }
+  
+    .project-card {
+      width: 100%; /* Full width for project cards on smaller screens */
+      margin-bottom: 2em; /* Increased margin between project cards */
+    }
+  }
+  
